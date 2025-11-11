@@ -1,3 +1,75 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AG BANK</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body> -->
+  <!-- HEADER -->
+  <!-- <header>
+    <div class="header-content">
+      <h2>AG BANK</h2>
+      <div class="menu-icon" id="menuIcon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header> -->
+
+  <!-- MAIN CONTENT -->
+  <!-- <main>
+    <section class="calculator"> -->
+      <!-- LEFT FORM SECTION -->
+      <!-- <div class="form-section">
+        <h3>Get started with Digital Credit Experience</h3>
+        <p>Qualify or apply your mortgage in minutes</p>
+
+        <label>Purchase price</label> -->
+        <!-- <div class="input-group">
+          <span>$</span>
+          <input type="number" id="purchasePrice" value="250000" min="50000" max="2500000">
+        </div>
+        <input type="range" id="priceRange" min="50000" max="2500000" step="10000" value="250000">
+
+        <label>Down payment</label>
+        <div class="input-group">
+          <span>$</span>
+          <input type="number" id="downPayment" value="50000" min="10000" max="2500000">
+        </div> -->
+        <!-- <input type="range" id="downRange" min="10000" max="2500000" step="5000" value="50000">
+
+        <label>Period</label>
+        <div class="period-options">
+          <label><input type="radio" name="period" value="5.25" checked> 5/1 ARM variable</label>
+          <label><input type="radio" name="period" value="4.75"> 15 year fixed</label>
+          <label><input type="radio" name="period" value="5.10"> 30 year fixed</label>
+        </div>
+
+        <label>Zip code</label>
+        <input type="text" id="zipcode" placeholder="Enter zip code" value="90459">
+      </div> -->
+ 
+      <!-- RIGHT RESULT SECTION -->
+      <!-- <div class="result-section">
+        <p>Your total payment will be</p>
+        <h1 id="totalPayment">$780</h1>
+        <div class="details">
+          <p>Rate: <span id="rate">5.25%</span></p>
+          <p>APR: <span id="apr">4.418%</span></p>
+          <p>Points: <span id="points">0.325</span></p>
+        </div>
+        <button id="getStarted">Get started</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +77,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AG BANK</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
@@ -33,6 +108,10 @@
           <input type="number" id="purchasePrice" value="250000" min="50000" max="2500000">
         </div>
         <input type="range" id="priceRange" min="50000" max="2500000" step="10000" value="250000">
+        <div class="range-labels">
+          <span>$50,000</span>
+          <span>$2.5 million</span>
+        </div>
 
         <label>Down payment</label>
         <div class="input-group">
@@ -40,26 +119,52 @@
           <input type="number" id="downPayment" value="50000" min="10000" max="2500000">
         </div>
         <input type="range" id="downRange" min="10000" max="2500000" step="5000" value="50000">
-
-        <label>Period</label>
-        <div class="period-options">
-          <label><input type="radio" name="period" value="5.25" checked> 5/1 ARM variable</label>
-          <label><input type="radio" name="period" value="4.75"> 15 year fixed</label>
-          <label><input type="radio" name="period" value="5.10"> 30 year fixed</label>
+        <div class="range-labels">
+          <span>4% or more of purchase price</span>
         </div>
 
-        <label>Zip code</label>
-        <input type="text" id="zipcode" placeholder="Enter zip code" value="90459">
+        <!-- FLEXBOX CONTAINER FOR PERIOD AND ZIP CODE -->
+        <div class="period-zip-container">
+          <!-- PERIOD SECTION -->
+          <div class="period-section">
+            <label>Period</label>
+            <div class="period-options">
+              <label><input type="radio" name="period" value="5.25" checked> 5/1 ARM variable</label>
+              <label><input type="radio" name="period" value="4.75"> 15 year fixed</label>
+              <label><input type="radio" name="period" value="5.10"> 30 year fixed</label>
+            </div>
+          </div>
+
+          <!-- ZIP CODE SECTION -->
+          <div class="zip-section">
+            <label>Zip code</label>
+            <input type="text" id="zipcode" placeholder="Enter zip code" value="90459">
+          </div>
+        </div>
       </div>
 
-      <!-- RIGHT RESULT SECTION -->
+      <!-- RIGHT RESULT SECTION WITH PURPLE GRADIENT -->
       <div class="result-section">
-        <p>Your total payment will be</p>
-        <h1 id="totalPayment">$780</h1>
+        <p class="result-label">Your total payment will be</p>
+        
+        <!-- WHITE BACKGROUND CONTAINER FOR PAYMENT -->
+        <div class="payment-display">
+          <h1 id="totalPayment">780</h1>
+        </div>
+        
         <div class="details">
-          <p>Rate: <span id="rate">5.25%</span></p>
-          <p>APR: <span id="apr">4.418%</span></p>
-          <p>Points: <span id="points">0.325</span></p>
+          <div class="detail-item">
+            <p class="detail-label">Rate</p>
+            <p class="detail-value" id="rate">5.25%</p>
+          </div>
+          <div class="detail-item">
+            <p class="detail-label">APR</p>
+            <p class="detail-value" id="apr">4.418%</p>
+          </div>
+          <div class="detail-item">
+            <p class="detail-label">Points</p>
+            <p class="detail-value" id="points">0.325</p>
+          </div>
         </div>
         <button id="getStarted">Get started</button>
       </div>
